@@ -1,13 +1,7 @@
 ﻿using HashTable;
 using System;
-
-
-
-
-
 public class Program
 {
-
     public static void Main(string[] args)
     {
         MyMapNode<string, int> hash = new MyMapNode<string, int>(5);
@@ -29,18 +23,14 @@ public class Program
                 }
 
             }
-
             if (!checkForDuplication.Contains(element))
             {
                 checkForDuplication.AddLast(element);
                 hash.Add(element, count);//(to,2)
 
             }
-
-
         }
         hash.Display();
-
     }
 }
 
