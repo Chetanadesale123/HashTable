@@ -4,7 +4,6 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        MyMapNode<string, int> hash = new MyMapNode<string, int>(5);//size 5
         Console.WriteLine("Welcome to Hash Table");
         bool end = true;
         Console.WriteLine("\n 1.Frequency Of Words in sentence \n 2. Frequency Of Words In Large Paragraph Phrase and Remove \n 3.End the Program");
@@ -15,6 +14,9 @@ public class Program
             switch (option)
             {
                 case 1:
+                    MyMapNode<string, int> hash1 = new MyMapNode<string, int>(5);//size 5
+                    
+
                     string words = "to be or not to be";
                     string[] arr = words.Split(' ');
                     LinkedList<string> checkForDuplication = new LinkedList<string>();
@@ -35,13 +37,14 @@ public class Program
                         if (!checkForDuplication.Contains(element))
                         {
                             checkForDuplication.AddLast(element);
-                            hash.Add(element, count);//(to,2)
+                            hash1.Add(element, count);//(to,2)
 
                         }
                     }
-                    hash.Display();
+                    hash1.Display();
                     break;
                 case 2:
+                    MyMapNode<string, int> hash2 = new MyMapNode<string, int>(5);
                     string phrase = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
                     string[] arr1 = phrase.Split(' ');
                     LinkedList<string> checkDuplication = new LinkedList<string>();
@@ -58,22 +61,20 @@ public class Program
                                     break;
                                 }
                             }
-
                         }
-
                         if (checkDuplication.Contains(element))
                         {
                             continue;
                         }
                         checkDuplication.AddLast(element);
-                        hash.Add(element, count);
+                        hash2.Add(element, count);
                     }
-                    int freq = hash.Get("avoidable");
+                    int freq = hash2.Get("avoidable");
                     Console.WriteLine("Frequency of the word Avoidable:" + "" + freq);
-                    hash.Remove("avoidable");
-                    freq = hash.Get("avoidable");
+                    hash2.Remove("avoidable");
+                    freq = hash2.Get("avoidable");
                     Console.WriteLine("Frequency of the word Avoidable after removing:" + "" + freq);
-                    hash.Display();
+                    hash2.Display();
                     break;
                 case 3:
                     end = false;
