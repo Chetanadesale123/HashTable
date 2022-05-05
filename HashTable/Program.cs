@@ -15,8 +15,6 @@ public class Program
             {
                 case 1:
                     MyMapNode<string, int> hash1 = new MyMapNode<string, int>(5);//size 5
-                    
-
                     string words = "to be or not to be";
                     string[] arr = words.Split(' ');
                     LinkedList<string> checkForDuplication = new LinkedList<string>();
