@@ -7,10 +7,10 @@ public class Program
         MyMapNode<string, int> hash = new MyMapNode<string, int>(5);//size 5
         Console.WriteLine("Welcome to Hash Table");
         bool end = true;
-        Console.WriteLine("1.Frequency Of Words in sentence \n2. Frequency Of Words In Large Paragraph Phrase \n 3.End the Program");
+        Console.WriteLine("\n 1.Frequency Of Words in sentence \n 2. Frequency Of Words In Large Paragraph Phrase and Remove \n 3.End the Program");
         while (end == true)
         {
-            Console.WriteLine("Take an option to execute");
+            Console.WriteLine("Take an option to execute : ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -68,6 +68,11 @@ public class Program
                         checkDuplication.AddLast(element);
                         hash.Add(element, count);
                     }
+                    int freq = hash.Get("avoidable");
+                    Console.WriteLine("Frequency of the word Avoidable:" + "" + freq);
+                    hash.Remove("avoidable");
+                    freq = hash.Get("avoidable");
+                    Console.WriteLine("Frequency of the word Avoidable after removing:" + "" + freq);
                     hash.Display();
                     break;
                 case 3:
